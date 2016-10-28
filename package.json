@@ -1,0 +1,19 @@
+{
+  "name": "exp-report",
+  "version": "1.0.0",
+  "description": "实验报告",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fangj/report.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fangj/report/issues"
+  },
+  "homepage": "https://github.com/fangj/report#readme"
+}
