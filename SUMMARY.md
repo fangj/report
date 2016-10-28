@@ -2,3 +2,4 @@
 
 * [原型](prototype.md)
 
+* [原型分析](prototype_ana.md)

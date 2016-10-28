@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/fangj/report/issues"
   },
-  "homepage": "https://github.com/fangj/report#readme"
+  "homepage": "https://github.com/fangj/report#readme",
+  "dependencies": {
+    "gitbook-plugin-fancybox": "^3.0.0"
+  }
 }
