@@ -1,8 +1,8 @@
 import React from 'react';
 
-export default class UserLogin extends React.Component {
+export default class UserSignup extends React.Component {
   static propTypes = {
-    logIn: React.PropTypes.func.isRequired,
+    signUp: React.PropTypes.func.isRequired,
   };
 
   constructor(props) {
@@ -13,13 +13,13 @@ export default class UserLogin extends React.Component {
     return (
 			<form className="form-horizontal" role="form" onSubmit={this.handleSubmit.bind(this)}>
 			  <div className="form-group">
-			    <label for="inputEmail3" className="col-sm-2 control-label">Email</label>
+			    <label htmlFor="inputEmail3" className="col-sm-2 control-label">Email</label>
 			    <div className="col-sm-10">
 			      <input type="email" className="form-control" id="inputEmail3" placeholder="Email" ref="email"/>
 			    </div>
 			  </div>
 			  <div className="form-group">
-			    <label for="inputPassword3" className="col-sm-2 control-label">Password</label>
+			    <label htmlFor="inputPassword3" className="col-sm-2 control-label">Password</label>
 			    <div className="col-sm-10">
 			      <input type="password" className="form-control" id="inputPassword3" placeholder="Password" ref="password"/>
 			    </div>
@@ -39,15 +39,15 @@ export default class UserLogin extends React.Component {
 	    const email=this.refs.email.value;
 	    const password=this.refs.password.value;
 	    // console.log(email,password)
-	    const {logIn}=this.props;
-	    logIn(email,password).then(gotoLoginAfter).catch(showError)
+	    const {signUp}=this.props;
+	    signUp(email,password).then(gotoSignUpAfter).catch(showError)
 	}
 }
 
-const gotoLoginAfter=()=>{
-	PubSub.publish('route','login_after');
+const gotoSignUpAfter=()=>{
+	PubSub.publish('route','signup_after');
 }
 const showError=()=>{
-	PubSub.publish('msg.error','登陆错误');
+	PubSub.publish('msg.error','注册错误');
 }
 

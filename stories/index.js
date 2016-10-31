@@ -15,10 +15,41 @@ storiesOf('Button', module)
 
 import UserLogin from '../components/login/UserLogin';
 
-storiesOf('Login ', module)
+storiesOf('UserLogin ', module)
   .add('success', () => (
-  	<UserLogin login={()=>{return Promise.resolve()}}/>
+  	<UserLogin logIn={()=>{return Promise.resolve()}}/>
   ))
   .add('fail', () => (
-  	<UserLogin login={()=>{return Promise.reject()}}/>
+  	<UserLogin logIn={()=>{return Promise.reject()}}/>
   ));
+
+import UserSignup from '../components/signup/UserSignup';
+
+storiesOf('UserSignup ', module)
+  .add('success', () => (
+  	<UserSignup signUp={()=>{return Promise.resolve()}}/>
+  ))
+  .add('fail', () => (
+  	<UserSignup signUp={()=>{return Promise.reject()}}/>
+  ));
+
+import Login from '../components/login/Login';
+
+storiesOf('登陆 ', module)
+  .add('success', () => (
+  	<Login logIn={()=>{return Promise.resolve()}}/>
+  ))
+  .add('fail', () => (
+  	<Login logIn={()=>{return Promise.reject()}}/>
+  ));
+
+import Signup from '../components/signup/Signup';
+
+storiesOf('注册 ', module)
+  .add('success', () => (
+  	<Signup signUp={()=>{return Promise.resolve()}}/>
+  ))
+  .add('fail', () => (
+  	<Signup signUp={()=>{return Promise.reject()}}/>
+  ));
+
