@@ -63,3 +63,14 @@ storiesOf('登陆或注册 ', module)
   .add('fail', () => (
   	<LoginOrSignup logIn={()=>{return Promise.reject()}}/>
   ));
+
+
+import SignupOrLogin from '../components/signup/SignupOrLogin';
+
+storiesOf('注册或登陆 ', module)
+  .add('success', () => (
+  	<SignupOrLogin signUp={()=>{return Promise.resolve()}}/>
+  ))
+  .add('fail', () => (
+  	<SignupOrLogin signUp={()=>{return Promise.reject()}}/>
+  ));
