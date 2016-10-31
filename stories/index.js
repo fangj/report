@@ -74,3 +74,15 @@ storiesOf('注册或登陆 ', module)
   .add('fail', () => (
   	<SignupOrLogin signUp={()=>{return Promise.reject()}}/>
   ));
+
+import StudentLogin from '../components/entry/StudentLogin';
+import StudentSignup from '../components/entry/StudentSignup';
+import TeacherLogin from '../components/entry/TeacherLogin';
+import TeacherSignup from '../components/entry/TeacherSignup';
+
+storiesOf('入口 ', module)
+  .add('StudentLogin', () => <StudentLogin signUpStudent={()=>{return Promise.resolve()}} logInStudent={()=>{return Promise.resolve()}}
+  	 signUpTeacher={()=>{return Promise.resolve()}} logInTeacher={()=>{return Promise.resolve()}} />)
+  .add('StudentSignup', () => <StudentSignup/>)
+  .add('TeacherLogin', () => <TeacherLogin/>)
+  .add('TeacherSignup', () => <TeacherSignup/>);
