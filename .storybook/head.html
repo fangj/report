@@ -4,5 +4,8 @@
 <link href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
 <script src="http://cdn.bootcss.com/toastr.js/latest/toastr.min.js"></script>
 <script>
-	PubSub.subscribe( 'msg.error', (msg,str)=>{toastr.error(str)} );
+	PubSub.subscribe( 'msg.error', (msg,str)=>{toastr.error(str)} ); //toast,全局消息。正式代码中也有
+</script>
+<script>
+	PubSub.subscribe( 'route', (msg,route)=>{toastr.info("goto:"+route)} ); //方便调试路由跳转，正式代码中不出现
 </script>
