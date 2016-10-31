@@ -1,3 +1,4 @@
 {
-    "plugins": ["fancybox"]
+    "plugins": ["fancybox"],
+    "root": "./docs"
 }
