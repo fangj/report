@@ -75,14 +75,12 @@ storiesOf('注册或登陆 ', module)
   	<SignupOrLogin signUp={()=>{return Promise.reject()}}/>
   ));
 
-import StudentLogin from '../components/entry/StudentLogin';
-import StudentSignup from '../components/entry/StudentSignup';
-import TeacherLogin from '../components/entry/TeacherLogin';
-import TeacherSignup from '../components/entry/TeacherSignup';
+import StudentEntry from '../components/entry/StudentEntry';
+import TeacherEntry from '../components/entry/TeacherEntry';
+import Entry from '../components/entry/Entry';
+
 
 storiesOf('入口 ', module)
-  .add('StudentLogin', () => <StudentLogin signUpStudent={()=>{return Promise.resolve()}} logInStudent={()=>{return Promise.resolve()}}
-  	 signUpTeacher={()=>{return Promise.resolve()}} logInTeacher={()=>{return Promise.resolve()}} />)
-  .add('StudentSignup', () => <StudentSignup/>)
-  .add('TeacherLogin', () => <TeacherLogin/>)
-  .add('TeacherSignup', () => <TeacherSignup/>);
+  .add('Entry', () => <Entry signUp={()=>{return Promise.resolve()}} logIn={()=>{return Promise.resolve()}} />)
+  .add('StudentEntry', () => <StudentEntry signUp={()=>{return Promise.resolve()}} logIn={()=>{return Promise.resolve()}} />)
+  .add('TeacherEntry', () => <TeacherEntry signUp={()=>{return Promise.resolve()}} logIn={()=>{return Promise.resolve()}} />);
