@@ -13,25 +13,6 @@ storiesOf('Button', module)
     <button onClick={()=>PubSub.publish('msg.error','something wrong')}>😀 😎 👍 💯</button>
   ));
 
-import UserLogin from '../components/login/UserLogin';
-
-storiesOf('UserLogin ', module)
-  .add('success', () => (
-  	<UserLogin logIn={()=>{return Promise.resolve()}}/>
-  ))
-  .add('fail', () => (
-  	<UserLogin logIn={()=>{return Promise.reject()}}/>
-  ));
-
-import UserSignup from '../components/signup/UserSignup';
-
-storiesOf('UserSignup ', module)
-  .add('success', () => (
-  	<UserSignup signUp={()=>{return Promise.resolve()}}/>
-  ))
-  .add('fail', () => (
-  	<UserSignup signUp={()=>{return Promise.reject()}}/>
-  ));
 
 import Login from '../components/login/Login';
 
