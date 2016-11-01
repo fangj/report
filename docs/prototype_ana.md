@@ -70,7 +70,7 @@ student_edit/:_id
 取得实验报告
 s:getCurrtentUser
 s:getReportByTemplate(templateID) //根据实验报告模板取得实验报告，如果没有则新建一个
-s:updateBlock(block) //更新内容块
+s:renderBlock(block) //显示内容块（内容块的编辑由内容块本身负责）
 
 ->:{route,"student_report_list"} //返回实验报告列表
 ```

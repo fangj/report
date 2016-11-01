@@ -28,7 +28,9 @@ export default class StudentReportListPage extends React.Component {
       	  </div>
 	      </nav>
       	
-      	<h1>选择实验</h1>
+      	<div className="page-header">
+  			<h1>选择实验</h1>
+      	</div>
       	<StudentReportList getReportTemplates={getReportTemplates}/>
       </div>
     );

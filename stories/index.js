@@ -74,3 +74,11 @@ const report_list=[{name:"abc",_id:"1"},{name:"def",_id:"2"}]
 storiesOf('StudentReportList',module)
   .add('StudentReportList',()=><StudentReportList getReportTemplates={()=>Promise.resolve(report_list)}/>)
   .add('StudentReportListPage',()=><StudentReportListPage getReportTemplates={()=>Promise.resolve(report_list)} logout={()=>Promise.resolve()}/>)
+
+
+const report={name:'a report',blocks:[{},{}]}
+import StudentEdit from '../components/student_edit';
+storiesOf('StudentEdit',module)
+  .add('StudentEdit',()=><StudentEdit templateID={"1"} getCurrtentUser={()=>({_id:"1",name:"b"})} 
+  	getReportByTemplate={()=>Promise.resolve(report)}
+  	renderBlock={(b)=><pre>{JSON.stringify(b,null,2)}</pre>}/>)
