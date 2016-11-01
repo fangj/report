@@ -66,3 +66,11 @@ storiesOf('入口 ', module)
   .add('StudentEntry', () => <StudentEntry signUp={()=>{return Promise.resolve()}} logIn={()=>{return Promise.resolve()}} />)
   .add('TeacherEntry', () => <TeacherEntry signUp={()=>{return Promise.resolve()}} logIn={()=>{return Promise.resolve()}} 
   	checkAdmin={(password)=>{return password==="admin"?Promise.resolve():Promise.reject()}}/>);
+
+import StudentReportList from '../components/student_report_list';
+import StudentReportListPage from '../components/student_report_list/page';
+
+const report_list=[{name:"abc",_id:"1"},{name:"def",_id:"2"}]
+storiesOf('StudentReportList',module)
+  .add('StudentReportList',()=><StudentReportList getReportTemplates={()=>Promise.resolve(report_list)}/>)
+  .add('StudentReportListPage',()=><StudentReportListPage getReportTemplates={()=>Promise.resolve(report_list)} logout={()=>Promise.resolve()}/>)
