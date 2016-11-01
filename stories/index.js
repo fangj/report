@@ -83,4 +83,5 @@ import Entry from '../components/entry/Entry';
 storiesOf('入口 ', module)
   .add('Entry', () => <Entry signUp={()=>{return Promise.resolve()}} logIn={()=>{return Promise.resolve()}} />)
   .add('StudentEntry', () => <StudentEntry signUp={()=>{return Promise.resolve()}} logIn={()=>{return Promise.resolve()}} />)
-  .add('TeacherEntry', () => <TeacherEntry signUp={()=>{return Promise.resolve()}} logIn={()=>{return Promise.resolve()}} />);
+  .add('TeacherEntry', () => <TeacherEntry signUp={()=>{return Promise.resolve()}} logIn={()=>{return Promise.resolve()}} 
+  	checkAdmin={(password)=>{return password==="admin"?Promise.resolve():Promise.reject()}}/>);
