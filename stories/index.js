@@ -82,3 +82,15 @@ storiesOf('StudentEdit',module)
   .add('StudentEdit',()=><StudentEdit templateID={"1"} getCurrtentUser={()=>({_id:"1",name:"b"})} 
   	getReportByTemplate={()=>Promise.resolve(report)}
   	renderBlock={(b,{isEdit})=><pre>{isEdit?"edit":JSON.stringify(b,null,2)}</pre>}/>)
+
+
+import TeacherReportList from '../components/teacher_report_list';
+storiesOf('TeacherReportList',module)
+  .add('TeacherReportList',()=><TeacherReportList getReportTemplates={()=>Promise.resolve(report_list)} createReportTemplate={()=>Promise.resolve({_id:"new1"})}/>)
+
+
+import TeacherReportEdit from '../components/teacher_report_edit';
+const template=[{_id:1},{_id:2}]
+storiesOf('TeacherReportEdit',module)
+  .add('TeacherReportEdit',()=><TeacherReportEdit template={template} renderBlock={(b,{isEdit})=><pre>{isEdit?"edit":JSON.stringify(b,null,2)}</pre>} removeBlock={()=>Promise.resolve()}/>)
+

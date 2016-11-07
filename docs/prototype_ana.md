@@ -12,7 +12,7 @@
 接受消息,显示其中的msg
 <-：{error,msg}
 ```
-
+------------------
 #### 学生注册
 
 ![学生注册.png](./1_prototype/学生注册.png)
@@ -31,7 +31,7 @@ s:student_reg(name,password)
 ->:{route,"student_login"}//成功
 
 ```
-
+------------------
 
 ![学生登陆.png](./1_prototype/学生登陆.png)
 ```
@@ -45,7 +45,7 @@ s:student_login(name,password)
 ->:{error,msg}//失败
 ->:{route,"student_main"}//成功,进入学生主页：实验列表页
 ```
-
+---------------------
 ![选择报告模板.png](./1_prototype/选择报告模板.png)
 
 ```
@@ -61,6 +61,7 @@ student_report_list
 	s:getReportTemplates //取得实验模板列表
 	->:{route,"student_edit/:templateID"} //编写实验报告
 ```
+--------------------
 ![编写实验报告.png](./1_prototype/编写实验报告.png)
 ```
 路由
@@ -74,7 +75,7 @@ s:renderBlock(block) //显示内容块（内容块的编辑由内容块本身负
 
 ->:{route,"student_report_list"} //返回实验报告列表
 ```
-
+---------------------
 ![教师注册.png](./1_prototype/教师注册.png)
 ```
 路由：
@@ -89,7 +90,7 @@ s:teacher_reg(name,password)
 ->:{route,"teacher_login"}//成功
 
 ```
-
+-------------------
 ![教师登陆.png](./1_prototype/教师登陆.png)
 ```
 路由：
@@ -103,7 +104,7 @@ s:teacher_reg(name,password)
 ->:{route,"teacher_main"}//成功,进入教师主页:实验列表
 
 ```
-
+-------------------
 ![实验列表.png](./1_prototype/实验列表.png)
 ```
 路由：
@@ -121,6 +122,7 @@ teacher_report_list
 	s:createReportTemplate //创建实验模板
 	->:{route,"teacher_report/:id"} //跳转到“编辑实验模板”
 ```
+---------------------
 ![编辑实验模板.png](./1_prototype/编辑实验模板.png)
 ```
 路由:
@@ -128,12 +130,13 @@ teacher_report_edit/id
 
 组件：
 编辑实验模板
-	s:createBlock
-	s:removeBlock
-	s:updateBlock
+	s:renderBlock //显示block，包括edit,show模式
+	s:removeBlock //删除block
+	s:getTemplateByID //取得template
 ```
-
+------------------------
 ![批改实验报告.png](./1_prototype/批改实验报告.png)
+------------------------
 ![批改实验报告-已批改.png](./1_prototype/批改实验报告-已批改.png)
 ```
 路由:
@@ -143,6 +146,7 @@ teacher_report_judged
 	s:getReportByDate //取得某天的实验报告	
 ```
 
+-------------------
 ![批改实验报告-批改.png](./1_prototype/批改实验报告-批改.png)
 ```
 路由:
@@ -150,14 +154,17 @@ teacher_report_judge
 s:updateBlock
 ```
 
-
+-------------------
 ![编写实验报告-图片.png](./1_prototype/编写实验报告-图片.png)
 ```
 s:getImages(student)
 ```
+------------------
 ![编写实验报告-文字.png](./1_prototype/编写实验报告-文字.png)
+-------------
 ![编写实验报告-波形.png](./1_prototype/编写实验报告-波形.png)
 
+-----------------
 ![图片管理.png](./1_prototype/图片管理.png)
 ```
 s:uploadImage
