@@ -76,9 +76,9 @@ storiesOf('StudentReportList',module)
   .add('StudentReportListPage',()=><StudentReportListPage getReportTemplates={()=>Promise.resolve(report_list)} logout={()=>Promise.resolve()}/>)
 
 
-const report={name:'a report',blocks:[{},{}]}
+const report={name:'a report',blocks:[{_id:1},{_id:2}]}
 import StudentEdit from '../components/student_edit';
 storiesOf('StudentEdit',module)
   .add('StudentEdit',()=><StudentEdit templateID={"1"} getCurrtentUser={()=>({_id:"1",name:"b"})} 
   	getReportByTemplate={()=>Promise.resolve(report)}
-  	renderBlock={(b)=><pre>{JSON.stringify(b,null,2)}</pre>}/>)
+  	renderBlock={(b,{isEdit})=><pre>{isEdit?"edit":JSON.stringify(b,null,2)}</pre>}/>)

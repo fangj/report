@@ -1,13 +1,13 @@
 import React from 'react';
-require('./student_edit.css');
+require('./student_edit.less');
 
 
 export default class StudentEdit extends React.Component {
   static propTypes = {
-  	templateID:React.PropTypes.string.required,
-    getCurrtentUser: React.PropTypes.func.required,
-    getReportByTemplate:React.PropTypes.func.required,
-    renderBlock:React.PropTypes.func.required
+  	templateID:React.PropTypes.string.isRequired,
+    getCurrtentUser: React.PropTypes.func.isRequired,
+    getReportByTemplate:React.PropTypes.func.isRequired,
+    renderBlock:React.PropTypes.func.isRequired,
   };
 
   constructor(props) {
@@ -39,17 +39,26 @@ export default class StudentEdit extends React.Component {
 			{report.name}
 			</h1>
 		</div>
-      	<div>
+      	<div >
       		{report.blocks.map(this.showBlock)}
       	</div>
       </div>
     );
   }
 
-  showBlock(block,idx){
-  	const {renderBlock}=this.props;
-  	return <div key={idx} className="block">{renderBlock(block)}</div>
+  showBlock(block){
+    const {renderBlock}=this.props;
+  	const {edit}=this.state;
+    const _id=block._id;
+    const isEdit=(edit===_id);
+  	return <div key={_id} className="block">
+    <div className="menu">
+       <button type="button" className="btn btn-default btn-xs" onClick={()=>this.setState({edit:_id})}><i className="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+    </div>
+    {renderBlock(block,{isEdit})}</div>
   }
+
+
 }
 
 const gotoStudentReportList=()=>{PubSub.publish("route","student_report_list")}

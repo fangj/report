@@ -3,7 +3,7 @@ require('./student_report_list.css');
 
 export default class StudentReportList extends React.Component {
   static propTypes = {
-    getReportTemplates: React.PropTypes.func.required,
+    getReportTemplates: React.PropTypes.func.isRequired,
   };
 
   constructor(props) {
