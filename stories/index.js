@@ -90,7 +90,13 @@ storiesOf('TeacherReportList',module)
 
 
 import TeacherReportEdit from '../components/teacher_report_edit';
-const template=[{_id:1},{_id:2}]
+import TeacherReportPage from '../components/teacher_report_page';
+const blocks=[{_id:1},{_id:2}]
+const template={_id:1,name:"模板",blocks:blocks}
+const getTemplateByID=()=>Promise.resolve(template);
+const renderBlock=(b,{isEdit})=><pre>{isEdit?"edit":JSON.stringify(b,null,2)}</pre>
+const removeBlock=()=>Promise.resolve()
 storiesOf('TeacherReportEdit',module)
-  .add('TeacherReportEdit',()=><TeacherReportEdit template={template} renderBlock={(b,{isEdit})=><pre>{isEdit?"edit":JSON.stringify(b,null,2)}</pre>} removeBlock={()=>Promise.resolve()}/>)
+  .add('TeacherReportEdit',()=><TeacherReportEdit template={template} renderBlock={renderBlock} removeBlock={removeBlock}/>)
+  .add('TeacherReportPage',()=><TeacherReportPage templateID={"1"} getTemplateByID={getTemplateByID} renderBlock={renderBlock} removeBlock={removeBlock}/>)
 

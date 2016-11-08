@@ -5,7 +5,7 @@ export default class TeacherReportEdit extends React.Component {
   static propTypes = {
     renderBlock: React.PropTypes.func.isRequired,
     removeBlock: React.PropTypes.func.isRequired,
-    template:React.PropTypes.object.isRequired
+    blocks:React.PropTypes.object.isRequired
   };
 
   constructor(props) {
@@ -17,10 +17,10 @@ export default class TeacherReportEdit extends React.Component {
 
 
   render() {
-  	const {template}=this.props;
+  	const {blocks}=this.props;
     return (
       <div>	<div className="block">+</div>
-      {template.map(this.showBlock)}
+      {blocks.map(this.showBlock)}
       </div>
     );
   }
