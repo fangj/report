@@ -10,3 +10,6 @@
 <script>
 	PubSub.subscribe( 'route', (msg,route)=>{toastr.info("goto:"+route)} ); //方便调试路由跳转，正式代码中不出现
 </script>
+<script>
+	PubSub.subscribe( 'date', (msg,date)=>{toastr.info("date:"+date)} ); //方便调试日期，正式代码中不出现
+</script>

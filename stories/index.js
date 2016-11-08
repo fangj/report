@@ -100,3 +100,9 @@ storiesOf('TeacherReportEdit',module)
   .add('TeacherReportEdit',()=><TeacherReportEdit template={template} renderBlock={renderBlock} removeBlock={removeBlock}/>)
   .add('TeacherReportPage',()=><TeacherReportPage templateID={"1"} getTemplateByID={getTemplateByID} renderBlock={renderBlock} removeBlock={removeBlock}/>)
 
+const dates=["2016-09-01","2016-09-02","2016-09-03","2016-09-07","2016-09-08","2016-10-08"];
+import Calendar from '../components/calendar';
+import CalendarOneMonth from '../components/calendar_one_month';
+storiesOf('Calendar',module)
+  .add('Calendar',()=><Calendar dates={dates}/>)
+  .add('CalendarOneMonth',()=><CalendarOneMonth dates={dates}/>)

@@ -140,7 +140,7 @@ teacher_report_edit/id
 ![批改实验报告-已批改.png](./1_prototype/批改实验报告-已批改.png)
 ```
 路由:
-teacher_report_judged
+teacher_report_judge_summary
 批改实验报告
 	s:getReportDates //取得有实验报告的日期
 	s:getReportByDate //取得某天的实验报告	
