@@ -109,5 +109,8 @@ storiesOf('Calendar',module)
 
 
 import TeacherReportJudgeSummary from '../components/teacher_report_judge_summary';
+const getReportDates=()=>Promise.resolve(dates);
+const reports=[{},{}];
+const getReportsByDate=(date)=>Promise.resolve(reports)
 storiesOf('TeacherReportJudgeSummary',module)
-  .add('TeacherReportJudgeSummary',()=><TeacherReportJudgeSummary  dates={dates}/>)
+  .add('TeacherReportJudgeSummary',()=><TeacherReportJudgeSummary  getReportDates={getReportDates} getReportsByDate={getReportsByDate}/>)
