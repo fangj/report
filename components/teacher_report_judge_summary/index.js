@@ -1,9 +1,9 @@
 import React from 'react';
-import Calendar from '../calendar';
+import CalendarOneMonth from '../calendar_one_month';
 
 export default class TeacherReportJudgeSummary extends React.Component {
   static propTypes = {
-    name: React.PropTypes.string,
+    dates: React.PropTypes.array.isRequired
   };
 
   constructor(props) {
@@ -11,17 +11,9 @@ export default class TeacherReportJudgeSummary extends React.Component {
   }
 
   render() {
-  	const dates=["2016-09-01","2016-09-02","2016-09-03","2016-09-07","2016-09-08","2016-10-08"];
+  	const {dates}=this.props;
     return (
-      <div>
-      	<a href="#" className="prevMonth" onClick={this.handlePrevMonth}>
-          Prev Month
-        </a>
-        <a href="#" className="nextMonth" onClick={this.handleNextMonth}>
-          Next Month
-        </a>
-        <Calendar dates={dates}/>
-      </div>
+      <CalendarOneMonth dates={dates}/>
     );
   }
 }

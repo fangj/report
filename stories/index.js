@@ -106,3 +106,8 @@ import CalendarOneMonth from '../components/calendar_one_month';
 storiesOf('Calendar',module)
   .add('Calendar',()=><Calendar dates={dates}/>)
   .add('CalendarOneMonth',()=><CalendarOneMonth dates={dates}/>)
+
+
+import TeacherReportJudgeSummary from '../components/teacher_report_judge_summary';
+storiesOf('TeacherReportJudgeSummary',module)
+  .add('TeacherReportJudgeSummary',()=><TeacherReportJudgeSummary  dates={dates}/>)

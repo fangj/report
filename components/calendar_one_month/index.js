@@ -2,6 +2,7 @@ import React from 'react';
 import Calendar from '../calendar';
 import moment from 'moment';
 import _ from 'lodash';
+require('./one_month.less');
 
 export default class CalendarOneMonth extends React.Component {
   static propTypes = {
@@ -12,32 +13,34 @@ export default class CalendarOneMonth extends React.Component {
     super(props);
     this.handlePrevMonth=this.handlePrevMonth.bind(this);
     this.handleNextMonth=this.handleNextMonth.bind(this);
-    this.state={month:moment().month()}
+    this.state={date:moment()}
   }
 
   render() {
-  	const {month}=this.state;
-    const dates=["2016-09-01","2016-09-02","2016-09-03","2016-09-07","2016-09-08","2016-10-08"];
-    var current_dates=_.filter(dates,(date)=>moment(date).month()===month);
+  	const {date}=this.state;
+    const dates=["2016-09-01","2016-09-02","2016-09-03","2016-09-07","2016-09-08","2016-10-08","2016-11-08","2016-12-08","2017-01-08","2017-01-08","2017-02-08","2017-03-08","2017-04-08","2017-05-08","2017-06-08","2017-07-08"];
+    var current_dates=_.filter(dates,(_date)=>date.isSame(_date, 'month'));
     return (
-      <div>
-      	<a href="#" className="prevMonth" onClick={this.handlePrevMonth}>
-          Prev Month
+      <div className="one_month">
+      	<div className="bar">
+      	<a href="#" className="PreMonth" onClick={this.handlePrevMonth}>
+          上个月
         </a>
-        <a href="#" className="nextMonth" onClick={this.handleNextMonth}>
-          Next Month
+        <a href="#" className="NextMonth" onClick={this.handleNextMonth}>
+          下个月
         </a>
-        {current_dates.length>0?<Calendar dates={current_dates}/>:(month+1)+"月无内容"}
+        </div>
+        <Calendar dates={current_dates} date={date}/>
       </div>
     );
   }
 
   handlePrevMonth(){
-  	const {month}=this.state;
-  	this.setState({month:(month-1+12)%12})
+  	const {date}=this.state;
+  	this.setState({date:date.subtract(1, 'months')})
   }
   handleNextMonth(){
-  	const {month}=this.state;
-  	this.setState({month:(month+1)%12})
+  	const {date}=this.state;
+  	this.setState({date:date.add(1, 'months')})
   }
 }

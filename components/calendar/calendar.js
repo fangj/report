@@ -14,6 +14,7 @@ function onDate(date){
 export default class Cal extends React.Component {
   static propTypes = {
     dates: React.PropTypes.array.isRequired,
+    date: React.PropTypes.object
   };
 
   constructor(props) {
@@ -22,6 +23,7 @@ export default class Cal extends React.Component {
 
   render() {
     const dates=this.props.dates;
+    const date=this.props.date||dates[0];
     const mods=dates.map(d=>({
                 date: moment(d),
                 classNames: [ 'current' ],
@@ -31,6 +33,7 @@ export default class Cal extends React.Component {
     return (
       <Calendar
           locale='zh-cn'
+          date={date}
           startDate={ moment(dates[0]) }
           endDate={ moment(dates[dates.length-1]) } 
           weekNumbers={false}
