@@ -1,8 +1,8 @@
 import React from 'react';
 import {Tabs,Tab,Table} from 'react-bootstrap';
 var R = require('ramda');
-const hasScore=R.filter(R.has('score'));
-const notHasScore=R.filter(R.has('score'));
+const hasScore=R.filter(R.has('score')); //取出有score的项
+const notHasScore=R.filter(R.has('score'));//取出没有score的项
 
 export default class JudgeNameList extends React.Component {
   static propTypes = {
