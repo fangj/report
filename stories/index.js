@@ -114,3 +114,8 @@ const reports=[{},{}];
 const getReportsByDate=(date)=>Promise.resolve(reports)
 storiesOf('TeacherReportJudgeSummary',module)
   .add('TeacherReportJudgeSummary',()=><TeacherReportJudgeSummary  getReportDates={getReportDates} getReportsByDate={getReportsByDate}/>)
+
+import JudgeNameList from '../components/judge_name_list';
+const jreports=[{name:"aaa"},{name:"bbb"},{name:"ccc",score:88},{name:"ddd",score:99}];
+storiesOf('JudgeNameList',module)
+  .add('JudgeNameList',()=><JudgeNameList  reports={jreports}/>)
