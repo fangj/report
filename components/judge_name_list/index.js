@@ -42,5 +42,6 @@ export default class JudgeNameList extends React.Component {
 }
 
 
-const showUnjudgedReport=(report)=><tr><td>{report.name}</td></tr> 
-const showJudgedReport=(report)=><tr><td>{report.name}</td><td>{report.score}</td></tr> 
+const showUnjudgedReport=(report)=><tr onClick={()=>editReport(report)}><td>{report.name}</td></tr> 
+const showJudgedReport=(report)=><tr onClick={()=>editReport(report)}><td>{report.name}</td><td>{report.score}</td></tr> 
+const editReport=(report)=>PubSub.publish('route',"teacher_report_judge/"+report._id)
