@@ -1,6 +1,8 @@
 import React from 'react';
 import {Tabs,Tab,Table} from 'react-bootstrap';
 var R = require('ramda');
+const hasScore=R.filter(R.has('score'));
+const notHasScore=R.filter(R.has('score'));
 
 export default class JudgeNameList extends React.Component {
   static propTypes = {
@@ -15,8 +17,8 @@ export default class JudgeNameList extends React.Component {
   render() {
   	const {reports}=this.props;
   	const {judged}=this.state;
-  	const judged_reports=R.filter(R.has('score'))(reports);
-  	const unjudged_reports=R.reject(R.has('score'))(reports);
+  	const judged_reports=hasScore(reports);
+  	const unjudged_reports=notHasScore(reports);
 
     return (
       <div>
