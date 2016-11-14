@@ -119,3 +119,13 @@ import JudgeNameList from '../components/judge_name_list';
 const jreports=[{_id:"1",name:"aaa"},{_id:"2",name:"bbb"},{_id:"3",name:"ccc",score:88},{_id:"4",name:"ddd",score:99}];
 storiesOf('JudgeNameList',module)
   .add('JudgeNameList',()=><JudgeNameList  reports={jreports}/>)
+
+
+import JudgeReport from '../components/judge_report';
+const report02={
+  name:"实验报告名称",
+  student_name:"张三",
+  total_score:90,
+  blocks:[{data:"hello",score:23,comment:"abc"},{data:"hello",score:23,comment:"abc"}]
+}
+storiesOf('JudgeReport',module).add('JudgeReport',()=><JudgeReport  report={report02}/>)
